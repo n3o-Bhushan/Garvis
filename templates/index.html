@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Garvis</title>
+    <style>
+        /* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+        .typed-fade-out{
+            opacity: 0;
+            animation: 0;
+            transition: opacity .25s;
+        }
+
+
+    </style>
+    <!-- <link href="profile.css" rel="stylesheet"></style> -->
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <script src="{{ url_for('static', filename='js/typed.js') }}"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        Typed.new(".element", {
+            strings: ["Hey there, I am Jarvis....I mean Garvis..with a G.", "I am a child of Jarvis who specializes in Graphs.","Welcome to the world of knowledge extraction from huge data."],
+            typeSpeed: 50,
+            backDelay: 500,
+            
+        });
+    });
+</script>
+<style>
+        .goog-te-gadget-icon{
+              display:none;
+            }
+    </style>
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">Garvis</a>
+                <li class="page-scroll"><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Products</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contributors</a>
+                        
+        
+                    </li>
+                </ul>
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+
+        <div class="container" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{{ url_for('static', filename='img/profile.png')}}" alt="">
+                    
+                    <div class="intro-text">
+                        
+                        <hr class="star-light">
+                        <div class="element" style="display: inline"><span id="typed">
+                        </span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>World of Garvis</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/portfolio/cabin1.png')}}" class="img-responsive" alt="Cabin">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/portfolio/cake1.png')}}" class="img-responsive" alt="Slice of cake">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/portfolio/circus1.png')}}" class="img-responsive" alt="Circus tent">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/portfolio/game1.png')}}" class="img-responsive" alt="Game controller">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                       
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        
+                 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About Garvis</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+             
+                    <p>Garvis -Graph Jarvis is your personal data driven visual assistant. You don't even have to give him data to produce great results. He keeps on gathering data using his own intelligent NLP, ML and Data mining models.
+
+                    You can give him queries in Natural languages and he will give you relevant and cool graphs for better understanding of the problem.
+
+                    He is improving on daily basis. And can't wait to start talking with you through it's bot version. So he can keep you engaged as well as keep improving it's engine to solve your problems.
+</p>
+                </div>
+               
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+       <section id="contact">
+        <div class="container">
+        
+    
+    <div class="row control-group">
+        
+        <div class="col-sm-4 col-md-4 user-details" style="position: absolute; left: 35%">
+           
+            <div style="float:left; padding-right: 30px"><img class="img-responsive" src="{{ url_for('static', filename='img/test.png')}}" alt="Bhushan" height="60px" width="60px"></div>
+            <div style="float:left; padding-right: 30px"><img class="img-responsive" src="{{ url_for('static', filename='img/seema.png')}}" alt="Seema" height="60px" width="60px"></div>
+            <div style="float:left; padding-right: 30px"><img class="img-responsive" src="{{ url_for('static', filename='img/veeresh1.png')}}" alt="Veeresh" height="60px" width="60px"></div>
+            <div style="float:left;padding-right: 30px"><img class="img-responsive" src="{{ url_for('static', filename='img/veeresh1.png')}}" alt="Bhavika" height="60px" width="60px"></div>
+         
+        </div>
+
+        
+    </div>
+
+        <div class="row control-group">
+        
+        <div class="col-sm-4 col-md-4 user-details" style="position: absolute; margin-top: 5%; left: 35%">
+           <center>
+            <div style="float:left; padding-right: 15px;"><p>Bhushan</p></div>
+            <div style="float:left;padding-right: 23px"><p>Seema</p></div>
+            <div style="float:left;padding-right: 15px"><p>Veeresh</p></div>
+            <div style="float:left;padding-right: 30px"><p>Bhavika</p></div>
+        </div>
+
+        
+    </div>
+                        
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>NoT</h2>
+                            <hr class="star-primary">
+                            <img src="{{ url_for('static', filename='img/portfolio/cabin1.png')}}" class="img-responsive img-centered" alt="">
+                            <p>This is Network of Things. It takes one query and keeps on generating dynamic collapsible force layout graphs. And it has element of surprise for you. Very useful for researchers for relevancy indexing, news aggregation.</p>
+                            <div class="form-group">
+                            <form action ="." method="POST">
+                            <label for="not">Insert your keyword:</label>
+                                <input type="text" class="form-control" id="not" name="not" required>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+
+                            <h2>Trend Analysis</h2>
+
+                            <hr class="star-primary">
+                            <img src="{{ url_for('static', filename='img/portfolio/cake1.png')}}" class="img-responsive img-centered" alt="">
+                             <p>We use beautiful cache (REDIS) to empower our search</p>
+                           <form action ="./trend_analysis" method="POST">
+                                <input type="hidden" name="trend" id="trend" value="trend">
+  
+                                <button type="submit" class="btn btn-default">Check out</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </form>
+                            </div>
+                           
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Sentiment Sankey</h2>
+                            <hr class="star-primary">
+                            <img src="{{ url_for('static', filename='img/portfolio/circus1.png')}}" class="img-responsive img-centered" alt="">
+                            <p>Understand your market with the caluclated sentiments.</p>
+                            <div class="form-group">
+                            <form action ="./sankey_display" method="POST">
+                            <label for="not">Insert your keyword:</label>
+                                <input type="text" class="form-control" id="sankey" name="sankey">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Bibilophile's guide</h2>
+                            <hr class="star-primary">
+                            <img src="{{ url_for('static', filename='img/portfolio/game1.png')}}" class="img-responsive img-centered" alt="">
+                             <p>This is reading reccomendation engine</p>
+                            <form action ="./recommendation" method="POST">
+                            <label for="trend">Insert your keyword:</label>
+                                <input type="text" class="form-control" id="reco" name="reco">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </form>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="{{ url_for('static', filename='img/portfolio/safe.png')}}" class="img-responsive img-centered" alt="">
+                            
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="{{ url_for('static', filename='img/portfolio/submarine.png')}}" class="img-responsive img-centered" alt="">
+                            
+                            <button id="btnSubmit" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script  src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script  src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}" ></script>
+    <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{{ url_for('static', filename='js/freelancer.min.js') }}" ></script>
+
+</body>
+
+</html>

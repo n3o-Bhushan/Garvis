@@ -1,0 +1,175 @@
+<html>
+<head>
+  <title>Search Trend Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+	 <script src="{{ url_for('static', filename='vendor/jquery/jquery.js') }}"></script>
+	 	<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<title>Garvis</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+ 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <script src="{{ url_for('static', filename='js/typed.js') }}"></script>
+
+
+
+   
+
+  
+
+	<script type="text/javascript">
+		var keys = [];
+		var values =[];
+		var mySeries = []
+		var i=0;
+		var trenddata = '{{ trenddata|safe }}';
+		console.log(trenddata);
+		// jsonObj = eval("[" +trenddata+ "]")[0];
+		// console.log(jsonObj);
+	$.each($.parseJSON(trenddata), function(k, v) {
+
+    keys[i]=k;
+    //console.log(keys[i]);
+    values[i]=v;
+    //console.log(values[i]);
+    mySeries.push({ name: keys[i],data :values[i]});
+    i++;
+    //console.log(mySeries);
+
+    //console.log(k + ' is ' + v);
+});
+
+
+$(document).ready(function () {
+	Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
+    return {
+        radialGradient: {
+            cx: 0.5,
+            cy: 0.3,
+            r: 0.7
+        },
+        stops: [
+            [0, color],
+            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+        ]
+    };
+});
+
+// Build the chart
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'What users search for in our sites'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                },
+                connectorColor: 'silver'
+            }
+        }
+    },
+    series: [{
+
+        name: 'Searches',
+        data: [
+        		// {name:mySeries, 
+        		// }
+        		
+
+           { name: 'Facebook', y: 3 },
+            {
+                name: 'Watson',
+                y: 5,
+                
+            },
+            { name: 'Machine Learning', y: 2 },
+            { name: 'Artificial Intelligence', y: 2 }, 
+            { name: 'Modi', y: 1 },
+            { name: 'Obama', y: 1 }
+        ]
+    }]
+});});
+	
+	</script>
+
+<body>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">Garvis</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/">Home</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+    
+       
+    </header>
+
+
+
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto; padding-top: 60px" " ></div>
+	<div class="container" style="padding-top: 20px">
+  <center><ul class="pagination">
+    <li><a href="./trend_analysis1">1</a></li>
+    <li><a href="./bars">2</a></li>
+
+  </ul></center>
+</div>
+</body>
+</html>
